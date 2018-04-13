@@ -4,38 +4,82 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/main.css">
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type = "text/css" href="css/styles.css">
     <title>Calculator</title>
   </head>
   <body>
-    <h1>Hello World</h1>
+    <h1>Tiny Calculator</h1>
 
     <div class="container">
-      <div class="row">
-        <div class="col-xs-1"></div>
-        <div class="col-xs-1"></div>
-        <div class="col-xs-1"></div>
-        <div class="col-xs-1"></div>
-      </div>
-      <div class="row">
-        <div class="col-xs-1"></div>
-        <div class="col-xs-1"></div>
-        <div class="col-xs-1"></div>
-        <div class="col-xs-1"></div>
-      </div>
-      <div class="row">
-        <div class="col-xs-1"></div>
-        <div class="col-xs-1"></div>
-        <div class="col-xs-1"></div>
-        <div class="col-xs-1"></div>
-      </div>
-      <div class="row">
-        <div class="col-xs-1"></div>
-        <div class="col-xs-1"></div>
-        <div class="col-xs-1"></div>
-        <div class="col-xs-1"></div>
+      <div class="col-xs-4">
+        <div class="row" style="text-align: right">
+          <div class="col-xs-12" >
+            <p id="display"></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-3 col_btn col_btn" >
+            <button class="button" type="button" name="seven" onclick="btnPressed('7')">7</button>
+          </div>
+          <div class="col-xs-3 col_btn">
+            <button class="button" type="button" onclick="btnPressed('8')" name="eight">8</button>
+          </div>
+          <div class="col-xs-3 col_btn">
+            <button class="button" type="button" onclick="btnPressed('9')" name="nine">9</button>
+          </div>
+          <div class="col-xs-3 col_btn">
+            <button class="button" type="button" onclick="btnPressed('/')" name="divide">/</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-3 col_btn">
+            <button class="button" type="button" onclick="btnPressed('4')" name="four">4</button>
+          </div>
+          <div class="col-xs-3 col_btn">
+            <button class="button" type="button" onclick="btnPressed('5')" name="five">5</button>
+          </div>
+          <div class="col-xs-3 col_btn">
+            <button class="button" type="button" onclick="btnPressed('6')" name="six">6</button>
+          </div>
+          <div class="col-xs-3 col_btn">
+            <button class="button" type="button" onclick="btnPressed('*')" name="multiply">*</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-3 col_btn">
+            <button class="button" type="button" onclick="btnPressed('1')" name="one">1</button>
+          </div>
+          <div class="col-xs-3 col_btn">
+            <button class="button" type="button" onclick="btnPressed('2')" name="two">2</button>
+          </div>
+          <div class="col-xs-3 col_btn">
+            <button class="button" type="button" onclick="btnPressed('3')" name="three">3</button>
+          </div>
+          <div class="col-xs-3 col_btn">
+            <button class="button" type="button" onclick="btnPressed('+')" name="add">+</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-3 col_btn">
+            <button class="button" type="button" onclick="btnPressed('.')" name="decimal">.</button>
+          </div>
+          <div class="col-xs-3 col_btn">
+            <button class="button" type="button" onclick="btnPressed('0')" name="zero">0</button>
+          </div>
+          <div class="col-xs-3 col_btn">
+            <button class="button" type="button" onclick="btnPressed('=')" name="equals">=</button>
+          </div>
+          <div class="col-xs-3 col_btn">
+            <button class="button" type="button" onclick="btnPressed('-')" name="minus">-</button>
+          </div>
+        </div>
+
       </div>
 
     </div>
@@ -44,10 +88,6 @@
 
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+    <script type="text/javascript" src="scripts/calc.js"></script>
+    </body>
 </html>
